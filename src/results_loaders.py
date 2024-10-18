@@ -44,10 +44,6 @@ def gpt2_tokenizer_wrapper(text):
     return [str(x) for x in tokenizer(text)["input_ids"]]
 
 
-# todo need to arrange better the files in the repo, in particular the prontoQA, CLadder, letter string analogies and
-#  addition results
-
-
 def ngram_vectorize_new(train_texts, val_texts, test_texts, ngram_range=(1, 2), token_mode='word',
                         min_document_frequency=2, system_prompt=None, use_gpt2_tokeniser=False,
                         metric="simple_frequency"):
@@ -149,8 +145,6 @@ def select_features(x_train, train_labels, x_val, x_test, top_k=20000):
     return x_train, x_val, x_test, selector
 
 
-# todo make a subclass of ResultsLoader with the methods specific to those with default features, as those do not apply
-#  to the generic EvalsResultsLoader class
 class ResultsLoader(ABC):
     default_llms: List[str]
     feature_columns: List[str]
@@ -909,7 +903,8 @@ class CLadder(ResultsLoader):
 
         results_dict_cladder = {}
         for llm in llms:
-            results_dict_cladder[llm] = pd.read_csv(f"{base_path}/cladder_output_files/outputs/{self.llms_dict[llm]}.csv")
+            results_dict_cladder[llm] = pd.read_csv(
+                f"{base_path}/cladder_output_files/outputs/{self.llms_dict[llm]}.csv")
 
             # define "Success"
             results_dict_cladder[llm][f'Success_{llm}'] = (
@@ -1047,7 +1042,6 @@ class ProntoQA(ResultsLoader):
         self._print_df_size(results_df, llms[0], type="merged")
         for llm in llms[1:]:
             results_df = results_df.merge(
-                # todo fix this following this across other datasets (as this does not give the correct features to rows where prompts are not the same)
                 results_dict[llm][["prompt", "number_of_proof_steps", "top_down",
                                    "ontology", "expected_label"] + self.possible_targets_instance].rename(
                     columns={target: target + f"_{llm}" for target in self.possible_targets_instance}),
