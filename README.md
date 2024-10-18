@@ -58,7 +58,7 @@ Attributions:
 
 ## 3) Run the experiments
 
-Run the two notebooks `1_can_simple_features_predict_ground_truth.ipynb` and `2_effect_of_predicting_ground_truth_on_performance.ipynb` (in this order) to reproduce all results, figures and tables present in the paper.
+Run the two notebooks `1_can_simple_features_predict_ground_truth.ipynb` and `2_effect_of_predicting_ground_truth_on_performance.ipynb` (in this order) in the folder `experiments` to reproduce all results, figures and tables present in the paper.
 
 
 # Credits
