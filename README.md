@@ -39,7 +39,7 @@ The repository contains the result file obtained from ProntoQA for simplicity. T
 ### Datasets from the `KindsOfReasoning` collection
 The following datasets are obtained from the [`KindsOfReasoning` collection](https://github.com/Kinds-of-Intelligence-CFI/KindsOfReasoning):
 ```
-fantasy_reasoning, metaphor_boolean, anli, space_nli, wanli, babi_task_16, formal_fallacies_syllogisms_negation,
+fantasy_reasoning, metaphor_boolean, anli, space_nli, wanli, babi_task_16, formal_fallacies_syllogisms_negation
 ```
 See the above repository for credits and license information on those datasets.
 
@@ -64,4 +64,4 @@ Run the two notebooks `1_can_simple_features_predict_ground_truth.ipynb` and `2_
 # Credits
 - The code to download HELM-Lite was adapted from [this file](https://github.com/felipemaiapolo/efficbench/tree/master/generating_data/download_helm).
 - The code to compute Word2Vec and FastText embeddings was adapted from https://github.com/lorypack/llm-liedetector (released under BSD-3-Clause license)
-- We thank the creators of the `NeuBAROCO` dataset to allow us to include their dataset and instance-level results on various LLMs in this repository.
+- We thank the creators of the [`NeuBAROCO`](https://github.com/kmineshima/NeuBAROCO) dataset to allow us to include their dataset and instance-level results on various LLMs in this repository.
