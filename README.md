@@ -36,8 +36,8 @@ Download the data from [this link](https://edmond.mpg.de/file.xhtml?fileId=24645
 ### `ProntoQA`
 The repository contains the result file obtained from ProntoQA for simplicity. The result file can be obtained by cloning [the original repository](https://github.com/asaparov/prontoqa/tree/227f5edb70c4c242565fff065d6873b588340f97) (released under Apache 2.0 license) and running the script `analyze_results.py`. 
 
-### Datasets from the KindsOfReasoning collection
-The following datasets are obtained from the [KindsOfReasoning collection](https://github.com/Kinds-of-Intelligence-CFI/KindsOfReasoning):
+### Datasets from the `KindsOfReasoning` collection
+The following datasets are obtained from the [`KindsOfReasoning` collection](https://github.com/Kinds-of-Intelligence-CFI/KindsOfReasoning):
 ```
 fantasy_reasoning, metaphor_boolean, anli, space_nli, wanli, babi_task_16, formal_fallacies_syllogisms_negation,
 ```
@@ -54,7 +54,7 @@ neubaroco, moral_permissibility, causal_judgment, commonsense_qa_2
 Attributions:
 - `moral_permissibility` and `causal_judgment` are obtained from [BIG-Bench](https://github.com/google/BIG-bench/) (License: Apache License 2.0).
 - `commonsense_qa_2` can be obtained from [this repository](https://github.com/allenai/csqa2) (License: CC-BY-4.0).
-- `neubaroco` can be obtained from [this repository](https://github.com/kmineshima/NeuBAROCO) (the file we used in the experiments is `NeuBAROCO_NALOMA.tsv`).
+- `neubaroco` can be obtained from [this repository](https://github.com/kmineshima/NeuBAROCO) (the file we used in the experiments is `data/naloma2023/NeuBAROCO_NALOMA.tsv`).
 
 ## 3) Run the experiments
 
@@ -64,3 +64,4 @@ Run the two notebooks `1_can_simple_features_predict_ground_truth.ipynb` and `2_
 # Credits
 - The code to download HELM-Lite was adapted from [this file](https://github.com/felipemaiapolo/efficbench/tree/master/generating_data/download_helm).
 - The code to compute Word2Vec and FastText embeddings was adapted from https://github.com/lorypack/llm-liedetector (released under BSD-3-Clause license)
+- We thank the creators of the `NeuBAROCO` dataset to allow us to include their dataset and instance-level results on various LLMs in this repository.
